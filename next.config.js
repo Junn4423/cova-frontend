@@ -24,6 +24,10 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Tăng timeout cho static generation
+  staticPageGenerationTimeout: 120,
+  // Dùng standalone output cho production (tối ưu cho Docker/Render)
+  output: process.env.NEXT_BUILD_OUTPUT_TYPE === "standalone" ? "standalone" : undefined,
   images: {
     remotePatterns: [
       {
